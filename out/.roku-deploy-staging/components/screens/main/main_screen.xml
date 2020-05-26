@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainScreen" extends="Group" initialFocus = "cocktail_row_list">
+    <script type="text/brightscript" uri="main_screen.brs" />
+    <interface>
+        <field id="cocktails" type="array"/>
+    </interface>
+    <children >
+        <Poster
+            id="cocktailPoster"
+            uri=""
+            width="750.0"
+            height="750.0"
+            translation="[1200,-100]" 
+        />
+
+        <Poster
+            id="gradientPoster"
+            uri="pkg:/images/gradient.png"
+            width="0.0"
+            height="0.0"
+            translation="[0,0]" 
+        />
+
+        <Label
+            id="cocktailTitle"
+            height="100"
+            width="0"
+            font="font:MediumBoldSystemFont"
+            text = ""
+            horizAlign = "left"
+            vertAlign = "center"
+            translation="[318,8]" 
+        />
+
+        <RowList 
+            id = "cocktailRowList" 
+            translation = "[ 100, 400 ]" 
+            itemComponentName = "RowListItem" 
+            numRows = "2" 
+            itemSize = "[ 1800, 600 ]" 
+            rowItemSize = "[ [400, 600] ]" 
+            itemSpacing = "[ 50, 100 ]" 
+            showRowLabel = "[ true ]" 
+            drawFocusFeedback = "false" 
+            vertFocusAnimationStyle = "fixedFocusWrap" 
+            rowFocusAnimationStyle = "fixedFocusWrap" 
+        />
+    </children>
+</component>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="DetailsScreen" extends="Group" initialFocus = "">
+    <script type="text/brightscript" uri="details_screen.brs" />
+
+    <interface>
+        <field id="cocktail"
+		    type="assocarray"
+        />    
+        <function name="onCocktailLoaded" />
+
+    </interface>
+
+    <children>
+        <Rectangle
+            id="background"
+            color="0x19191a"
+            width="1280"
+            height="775"
+            translation="[320,100]" />
+<!-- title -->
+        <Label
+            id="cocktailTitleLabel"
+            height="50"
+            width="0"
+            font="font:MediumBoldSystemFont"
+            text = "Name:"
+            horizAlign = "left"
+            vertAlign = "center"
+            translation="[360, 125]" />
+        <Label
+            id="title"
+            height="100"
+            width="350"
+            wrap="true"
+            font="font:MediumSystemFont"
+            text = ""
+            horizAlign = "left"
+            vertAlign = "center"
+            translation="[550, 125]" />
+<!-- glass -->
+        <Label
+            id="cocktailGlassLabel"
+            height="100"
+            width="0"
+            font="font:MediumBoldSystemFont"
+            text = "Glass:"
+            horizAlign = "left"
+            vertAlign = "center"
+            translation="[360, 200]" />
+        <Label
+            id="glass"
+            height="100"
+            width="0"
+            font="font:MediumSystemFont"
+            text = ""
+            horizAlign = "left"
+            vertAlign = "center"
+            translation="[550, 200]" />
+<!-- ingredients -->
+        <Label
+            id="ingredientsLabel"
+            height="100"
+            width="0"
+            font="font:MediumBoldSystemFont"
+            text = "Ingredients:"
+            horizAlign = "left"
+            vertAlign = "center"
+            translation="[360, 250]" />
+        <Group
+            id='ingredients'
+        />
+
+        <Group
+            id='measurments'
+        />
+
+        <Label
+            id="instructionsLabel"
+            height="100"
+            width="0"
+            font="font:MediumBoldSystemFont"
+            text = "Instructions:"
+            horizAlign = "left"
+            vertAlign = "center"
+            translation="[1050, 100]" />
+
+        <Label
+            id="instructions"
+            wrap = "true"
+            width = "500"
+            horizAlign = "left"
+            vertAlign = "center"
+            translation="[1050, 200]"
+        />
+
+    </children>
+</component>

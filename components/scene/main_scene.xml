@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainScene" extends="Scene">
+<script type="text/brightscript" uri="main_scene.brs" />
+    <interface>
+        <function name="onCocktailSelected" />
+    </interface>
+
+    <children>
+    <!-- Loading screen -->
+        <Poster
+            id="Splash"
+            uri="pkg:/images/splash_hd.jpg"
+            width="1920"
+            height="1080"
+            translation="[0,0]" 
+        />
+
+        <BusySpinner 
+            id = "LoadingSpinner"
+            translation="[890,920]"
+        />
+   
+        <MainScreen
+            id="MainScreen"
+            translation="[0,0]"
+            visible="false"
+        />
+
+        <DetailsScreen
+            id="DetailsScreen"
+            translation="[0,0]"
+            visible="false"
+        />
+    </children>
+</component>
