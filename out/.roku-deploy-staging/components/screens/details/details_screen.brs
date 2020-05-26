@@ -27,7 +27,6 @@ sub onCocktailLoaded(cocktail)
         label.text = i
         label.translation = "["+Str(ingredientTranslationX)+", "+Str(ingredientTranslationY)+"]"
     
-
         m.ingredients.appendChild(label)
     end for 
 

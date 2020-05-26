@@ -8,6 +8,8 @@ sub init()
     m.busyspinner.poster.observeField("loadStatus", "showspinner")
     m.busyspinner.poster.uri = "pkg:/images/busyspinner_hd.png"
 
+    showVideo("test")
+
     loadCocktails()
 end sub
 
@@ -19,6 +21,11 @@ function onKeyEvent(key, press) as Boolean
             m.detailscreen.visible = false
             return true
         end if
+
+        if m.videoplayer.visible
+			closeVideo()
+			return true
+		end if
     end if
 
 end function
@@ -72,4 +79,21 @@ sub onCocktailExited(params)
     ? "[main_scene] closing details"
     m.detailscreen.visible = false
     m.cocktail_details.setFocus(true)
+end sub
+
+sub showVideo(url)
+    ? "[main_scene] showing video player"
+    content = CreateObject("roSGNode", "ContentNode")
+    content.url = "https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8"
+    content.streamformat = "hls"
+
+    m.videoplayer = m.scene.createChild("Video")
+    m.videoplayer.content = content
+    m.videoplayer.control = "play"
+end sub
+
+sub closeVideo()
+    ? "[main_scene] showing video player"
+    m.videoplayer.control = "stop"
+    m.scene.removeChild(m.videoplayer)
 end sub
